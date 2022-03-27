@@ -9,6 +9,14 @@
   border: 2px solid red;
 }
 
+#ballVid {
+  width: 610px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: -150;
+}
+
 #pokemon-image {
   position: relative;
   width: 300px;
