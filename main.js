@@ -2,7 +2,7 @@ let mute = false;
 let auto = true;
 let per = "All";
 let language = "en";
-let channel = "AsyncBit";
+let channel = "";
 let botuser = "";
 let token = "";
 let pokemon;
@@ -29,11 +29,19 @@ let currentName = "";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+
 if (urlParams.has("token")) {
   token = urlParams.get("token");
 } else {
   token = "";
 }
+
+if (urlParams.has("channel")) {
+  channel = urlParams.get("channel");
+} else {
+  channel = "";
+}
+
 if (botuser) {
   ComfyJS.Init(botuser, token, channel);
   console.log("Bot Send");
