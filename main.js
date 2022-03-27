@@ -1,23 +1,16 @@
-let holder = document.getElementById("holder");
-let ball = document.getElementById("ball");
-let title = document.getElementById("title");
-let wellDone = document.getElementById("wellDone");
-let ballVid = document.getElementById("ballVid");
 let mute = false;
 let auto = true;
 let per = "All";
 let language = "en";
 let channel = "AsyncBit";
 let botuser = "";
-let token = "oauth:gg3u8u0mu3kjc2au4v8rd580hl5uas";
+let token = "";
 let pokemon;
 let pokeDex = "true";
 let heightTxt = "Height";
 let weightTxt = "Weight";
 let foundByTxt = "Found By";
-let wellDoneTxt = "Well Done";
 let wasRightTxt = "You Was Right";
-let titleTxt = "Who's that Pokémon?";
 
 let isSolved = false;
 let min = 1;
@@ -34,6 +27,13 @@ let tShow = true;
 let pokeNum = 0;
 let currentName = "";
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+if (urlParams.has("token")) {
+  token = urlParams.get("token");
+} else {
+  token = "";
+}
 if (botuser) {
   ComfyJS.Init(botuser, token, channel);
   console.log("Bot Send");
